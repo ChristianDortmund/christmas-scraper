@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weihnachts TV</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <h1>Weihnachtsfilme suchen</h1>
+    <span class="zeile">
+        <label for="film">Filmname:</label>
+        <input class="text-input" type="text" name="film" id="film" placeholder="Namen des Films eingeben." required>
+    </span>
+    <span class="zeile">
+        <button id="addMovie" type="button">Film hinzufügen</button>
+    </span>
+    <hr>
+    <div class="filmliste">
+        <header>
+            <h2>Zu suchende Filme</h2>
+        </header>
+        <form action="/search" method="post">
+            <span class="zeile">
+                <label for="datum-von">Beginn des Suchzeitraums:</label>
+                <input class="date-input" type="date" name="datum-von" id="datum-von">
+            </span>
+            <span class="zeile">
+                <label for="datum-bis">Ende des Suchzeitraums:</label>
+                <input class="date-input" type="date" name="datum-bis" id="datum-bis">
+            </span>
+                <ul id="liste" name="liste">
+
+                </ul>
+            <button id="suchen" type="submit">Filme suchen!</button>
+        </form>
+    </div>
+    <script src="../index.js"></script>
+</body>
+
+</html>
