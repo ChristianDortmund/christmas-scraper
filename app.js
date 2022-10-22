@@ -7,12 +7,12 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
 const start = require('./routes/start');
-const scraper = require('./routes/scrape');
+const create_list = require('./routes/create-list');
 
 app.use(express.static(path.join(__dirname, '/')));
 
 app.use(start);
-app.use(scraper);
+app.use(create_list);
 
 
 app.listen(3000);
