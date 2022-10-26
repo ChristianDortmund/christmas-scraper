@@ -10,6 +10,7 @@ const fs = require('fs');
 
 router.get('/search-result', (req, res, next) => {
     const filmlistJson = fs.readFileSync(path.join(__dirname, '../', 'filmlist.json'), "utf8");
+
     got(url).then(response => {
         const $ = cheerio.load(response.body);
         console.log($('title')[0]);
@@ -17,6 +18,9 @@ router.get('/search-result', (req, res, next) => {
     }).catch(err => {
         console.log(err);
     });
+
+    console.log(url);
+
 });
 
 module.exports = router;
